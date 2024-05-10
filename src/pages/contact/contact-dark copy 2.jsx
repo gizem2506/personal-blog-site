@@ -1,16 +1,17 @@
+/* eslint-disable @next/next/no-sync-scripts */
 import React from "react";
-import blog3Data from "../../data/blog3.json";
-import DarkTheme from "../../layouts/Dark";
 import Navbar from "../../components/Navbar/navbar";
-import BlogDetails from "../../components/Blog-details/blog-details";
-import PageHeader from "../../components/Page-header/page-header";
 import Footer from "../../components/Footer/footer";
+import DarkTheme from "../../layouts/Dark";
+import ContactForm from "../../components/Contact-form/contact-form";
 
-const BlogDetailsDark = () => {
+const Contact = () => {
   const navbarRef = React.useRef(null);
   const logoRef = React.useRef(null);
 
   React.useEffect(() => {
+    document.querySelector("body").classList.add("contact-page");
+
     var navbar = navbarRef.current,
       logo = logoRef.current;
     if (window.pageYOffset > 300) {
@@ -25,24 +26,22 @@ const BlogDetailsDark = () => {
         navbar.classList.remove("nav-scroll");
       }
     });
+    return () => {
+      document.querySelector("body").classList.remove("contact-page");
+    };
   }, [navbarRef]);
+
   return (
     <DarkTheme>
-      <div className="circle-bg">
-        <div className="circle-color fixed">
-          <div className="gradient-circle"></div>
-          <div className="gradient-circle two"></div>
-        </div>
-      </div>
       <Navbar nr={navbarRef} lr={logoRef} />
-      {/* <PageHeader
-        title="Blog Details."
-        paragraph="All the most current news and events of our creative team."
-      /> */}
-          <BlogDetails blog={"blog"} />
-          <Footer />
+      <div className="main-content ">
+      <ContactForm />
+
+      </div>
+      <Footer hideBGCOLOR />
+
     </DarkTheme>
   );
 };
 
-export default BlogDetailsDark;
+export default Contact;

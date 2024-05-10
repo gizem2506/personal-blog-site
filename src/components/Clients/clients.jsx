@@ -13,12 +13,10 @@ const Clients = ({theme}) => {
           <div className="col-lg-4 valign md-mb50">
             <div className="sec-head mb-0">
               <h6 className="wow fadeIn" data-wow-delay=".5s">
-                Best Features
+               My Best
               </h6>
-              <h3 className="wow mb-20 color-font">Yayındakiler</h3>
-              <p>
-               Yayınladığım projeler yer almaktadır.
-              </p>
+              <h3 className="wow mb-20 color-font">Published Projects</h3>
+              
             </div>
           </div>
           <div className="col-lg-8">

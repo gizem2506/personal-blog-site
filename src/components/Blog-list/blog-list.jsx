@@ -7,6 +7,7 @@ const BlogList = ({ blogs }) => {
   return (
     <section className="blog-pg blog-list section-padding pt-0">
       <div className="container">
+        
         <div className="row justify-content-center">
           <div className="col-lg-11">
             <div className="posts mt-80">
@@ -34,14 +35,7 @@ const BlogList = ({ blogs }) => {
                                 </span>
                               </a>
                             </Link>
-                            <span>/</span>
-                            {blogItem.tags.map((tag, index) => (
-                              <Link key={index} href="/blog/blog-dark">
-                                <a className="tag">
-                                  <span>{tag}</span>
-                                </a>
-                              </Link>
-                            ))}
+                            
                           </div>
                           <h5>
                             <Link href="/blog-details/blog-details-dark">

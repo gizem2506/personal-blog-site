@@ -33,8 +33,8 @@ const About = () => {
       <PagesHeader />
       <Services style="4item" />
    
-      <Clients theme="dark" />
-      <CallToAction />
+      {/* <Clients theme="dark" /> */}
+      {/* <CallToAction /> */}
       <Footer />
     </DarkTheme>
   );

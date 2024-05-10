@@ -5417,7 +5417,7 @@ span:hover {
 }
 
 .portfolio-frl .gallery .items .item-img img {
-  height: 100%;
+  height: 30%;
   width: 100%;
   -webkit-clip-path: inset(0);
   clip-path: inset(0);
@@ -8031,7 +8031,7 @@ span:hover {
 /* ====================== [ Start Footer ] ====================== */
 footer {
   color: #fff;
-  padding: 100px 0;
+  padding: 10px 0;
 }
 
 footer .item .title h5 {

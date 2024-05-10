@@ -22,7 +22,7 @@ const ContactForm = ({sliderRef, blackStar}) => {
         <div className="row">
           <div className="col-lg-6">
             <div className="form md-mb50">
-              <h4 className="fw-700 color-font mb-50">Get In Touch.</h4>
+              <h4 className="fw-700 color-font mb-50 pt-40">Get In Touch.</h4>
               <Formik
                 initialValues={{
                   name: "",
@@ -94,27 +94,20 @@ const ContactForm = ({sliderRef, blackStar}) => {
           
           <div className="col-lg-5 offset-lg-1">
             <div className="cont-info">
-              <h4 className="fw-700 color-font mb-50">Contact Info.</h4>
+              <h4 className="fw-700 color-font mb-50 pt-40">Contact Info.</h4>
               <h3 className="wow" data-splitting>
                 {ContactFromDate.title}
               </h3>
               <div className="item mb-40">
                 <h5>
-                  <a href="#0">{ContactFromDate.email}</a>
+                  <a href="#0">gizemaltayis@gmail.com</a>
                 </h5>
-                <h5>{ContactFromDate.phone}</h5>
+                <h5>+90 554 025 0910</h5>
               </div>
               <h3 className="wow" data-splitting>
-                Visit Us.
+                Social Media.
               </h3>
-              <div className="item">
-                <h6>
-                  {ContactFromDate.location.first}
-                  <br />
-                  {ContactFromDate.location.second}
-                </h6>
-              </div>
-              <div className="social mt-50">
+              <div className="social mt-30">
                 <a href="#0" className="icon">
                   <i className="fab fa-facebook-f"></i>
                 </a>
@@ -128,19 +121,12 @@ const ContactForm = ({sliderRef, blackStar}) => {
                   <i className="fab fa-behance"></i>
                 </a>
               </div>
+              
             </div>
           </div>
         </div>
       </div>
-      <Particles
-        id="particles-js"
-        options={blackStar ? particlesBlackConfig : particlesConfig}
-      />
-
-      <div className="circle-color">
-        <div className="gradient-circle"></div>
-        <div className="gradient-circle two"></div>
-      </div>
+    
     </section>
     
   );

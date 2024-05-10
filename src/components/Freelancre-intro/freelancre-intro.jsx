@@ -15,19 +15,18 @@ const FreelancreIntro = () => {
           <div className="col-lg-8 valign">
             <div className="cont">
               <h1 className="cd-headline clip">
-                Hello, My name is hisham i love design and i hope to make
-                awesome designs and also i create a
+                Hello, My name is Gizem.
+               
                 <span
-                  style={{ fontSize: "35px", lineHeight: "49px" }}
+                  style={{ fontSize: "38px", lineHeight: "49px" }}
                   className="cd-words-wrapper"
                 >
                   <Typewriter
                     options={{
                       wrapperClassName: "color-font fw-600",
                       strings: [
-                        "Mobile Apps",
-                        "Landing Pages",
-                        "Awesome Design",
+                        " I'm Software Developer",
+                        " I love design",
                       ],
                       autoStart: true,
                       loop: true,
@@ -48,7 +47,7 @@ const FreelancreIntro = () => {
             <ul className="flex">
               <li className="flex">
                 <div className="numb valign">
-                  <h3>12</h3>
+                  <h3>2</h3>
                 </div>
                 <div className="text valign">
                   <p>
@@ -59,11 +58,11 @@ const FreelancreIntro = () => {
 
               <li className="flex">
                 <div className="numb valign">
-                  <h3>165</h3>
+                  <h3>20</h3>
                 </div>
                 <div className="text valign">
                   <p>
-                    Projects Completed <br /> In 19 Countries
+                    Projects Completed <br /> 
                   </p>
                 </div>
               </li>
@@ -74,7 +73,7 @@ const FreelancreIntro = () => {
                     <div className="text valign">
                       <div className="full-width">
                         <p>Get In Touch</p>
-                        <h6>Vie_Support@Gmail.Com</h6>
+                        <h6>gizemaltayis@gmail.com</h6>
                       </div>
                     </div>
                     <div className="mail-icon">

@@ -27,9 +27,10 @@ const WorksStyle4 = () => {
       </div>
       <div className="container">
         <div className="row">
-        
+
 
           <div className="gallery full-width">
+          
             <div
               className="col-md-6 items graphic lg-mr wow fadeInUp"
               data-wow-delay=".4s"
@@ -37,73 +38,50 @@ const WorksStyle4 = () => {
               <div className="item-img">
                 <div className="cont">
                   <h6>Creative Mobile App</h6>
-                  <p>Ui / Ux creative mobile app design</p>
+                  <p>Ui / Ux creative mobile app design
+                    Ui / Ux creative mobile app design
+                    Ui / Ux creative mobile app design
+                    Ui / Ux creative mobile app design
+                    Ui / Ux creative mobile app design
+                    Ui / Ux creative mobile app design
+                  </p>
                 </div>
-                <Link href={`/project-details2/project-details2-dark`}>
-                  <a className="rota">
-                    <img src="/img/portfolio/freelancer/1.jpg" alt="image" />
-                    <div className="item-img-overlay"></div>
-                  </a>
-                </Link>
-              
-              </div>
-            </div>
-            <div
-              className="col-md-6 items graphic lg-mr wow fadeInUp"
-              data-wow-delay=".4s"
-            >
-              <div className="item-img">
-                <div className="cont">
-                  <h6>Creative Mobile App</h6>
-                  <p>Ui / Ux creative mobile app design</p>
+
+                <div className="btn-more mt-30">
+                  <Link href="/blog-details/blog-details-dark">
+                  <a className="simple-btn">Github</a>
+                  </Link>
                 </div>
-                <Link href={`/project-details2/project-details2-dark`}>
-                  <a className="rota">
-                    <img src="/img/portfolio/freelancer/2.jpg" alt="image" />
-                    <div className="item-img-overlay"></div>
-                  </a>
-                </Link>
-              
               </div>
-            </div>
-            <div
-              className="col-md-6 items graphic lg-mr wow fadeInUp"
-              data-wow-delay=".4s"
-            >
-              <div className="item-img">
-                <div className="cont">
-                  <h6>Creative Mobile App</h6>
-                  <p>Ui / Ux creative mobile app design</p>
-                </div>
-                <Link href={`/project-details2/project-details2-dark`}>
-                  <a className="rota">
-                    <img src="/img/portfolio/freelancer/3.jpg" alt="image" />
-                    <div className="item-img-overlay"></div>
-                  </a>
-                </Link>
               
-              </div>
-            </div>
-            <div
-              className="col-md-6 items graphic lg-mr wow fadeInUp"
-              data-wow-delay=".4s"
-            >
-              <div className="item-img">
-                <div className="cont">
-                  <h6>Creative Mobile App</h6>
-                  <p>Ui / Ux creative mobile app design</p>
-                </div>
-                <Link href={`/project-details2/project-details2-dark`}>
-                  <a className="rota">
-                    <img src="/img/portfolio/freelancer/4.jpg" alt="image" />
-                    <div className="item-img-overlay"></div>
-                  </a>
-                </Link>
-              
-              </div>
             </div>
 
-       
+            <div
+              className="col-md-6 items graphic lg-mr wow fadeInUp"
+              data-wow-delay=".4s"
+            >
+              <div className="item-img">
+                <div className="cont">
+                  <h6>Creative Mobile App</h6>
+                  <p>Ui / Ux creative mobile app design
+                    Ui / Ux creative mobile app design
+                    Ui / Ux creative mobile app design
+                    Ui / Ux creative mobile app design
+                    Ui / Ux creative mobile app design
+                    Ui / Ux creative mobile app design
+                  </p>
+                </div>
+
+                <div className="btn-more mt-30">
+                  <Link href="/blog-details/blog-details-dark">
+                    <a className="simple-btn">Github</a>
+                  </Link>
+                </div>
+              </div>
+              
+            </div>
+
+
           </div>
         </div>
       </div>

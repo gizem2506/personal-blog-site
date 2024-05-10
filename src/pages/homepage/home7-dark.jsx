@@ -35,9 +35,9 @@ const Homepage = () => {
       <FreelancreIntro />
       {/* <Services5  /> */}
       {/* <AboutUs5 /> */}
-      <FullTestimonials showHead />
+      {/* <FullTestimonials showHead /> */}
       {/* <Blogs2 /> */}
-      <Footer />
+      {/* <Footer /> */}
     </DarkTheme>
   );
 };

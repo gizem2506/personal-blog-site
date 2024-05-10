@@ -36,8 +36,7 @@ const BlogListDark = () => {
       </div>
       <Navbar nr={navbarRef} lr={logoRef} />
       <PageHeader
-        className="sub-bg"
-        title="Blog Yazılarım."
+        title="Blog Posts."
         paragraph="All the most current news and events of our creative team."
       />
       <BlogListed blogs={blog2Data} />

@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Vie</title>
+        <title>Gizem Altay</title>
         <link rel="icon" href="/img/favicon.ico" />
       </Head>
       <Cursor />

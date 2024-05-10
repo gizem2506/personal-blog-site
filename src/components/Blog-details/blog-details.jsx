@@ -3,6 +3,7 @@ import React from "react";
 import Link from "next/link";
 import { Formik, Form, Field } from "formik";
 import { Link as ScrollLink } from "react-scroll";
+import PageHeader from "../../components/Page-header/page-header";
 
 const BlogDetails = ({ theme }) => {
   const messageRef = React.useRef(null);
@@ -20,19 +21,23 @@ const BlogDetails = ({ theme }) => {
   return (
     <section className="blog-pg single section-padding pt-0">
       <div className="container">
+    
         <div className="row justify-content-center">
           <div className="col-lg-11">
             <div className="post">
-              <div className="img">
-                <img src="/img/blog/single.jpg" alt="" />
-              </div>
+             
               <div className="content pt-60">
                 <div className="row justify-content-center">
                   <div className="col-lg-10">
-                    <div className="cont">
-                      <h4 className="extra-title">
+                    <div className="cont ">
+                    <h4 className="extra-title ">
+                      </h4>
+                      <h4 className="extra-title pt-100 text-center color-font">
                         Priorities that will pop up in any particular month.
                       </h4>
+                      <div className="img pt-60">
+                <img src="/img/blog/single.jpg" alt="" />
+              </div>
                       <div className="spacial">
                         <p>
                           Never ever think of giving up. Winners never quit and
@@ -53,37 +58,8 @@ const BlogDetails = ({ theme }) => {
                         nurturing It should provide unconditional
                       </p>
 
-                      <h6>- We all intend to plan ahead.</h6>
-
-                      <p>
-                        We all intend to plan ahead, but too often let the
-                        day-to-day minutia get in the way of making a calendar
-                        for the year. Sure, you can’t know every detail to
-                        anticipate. Heck, you can’t know half the priorities
-                        that will pop up in any particular month. But you can
-                        plan for big picture seasonality, busy-times, and
-                        events.
-                      </p>
-
-                      <ul>
-                        <li>
-                          <span>01</span> Integer in volutpat libero.
-                        </li>
-                        <li>
-                          <span>02</span> Vivamus maximus ultricies pulvinar.
-                        </li>
-                        <li>
-                          <span>03</span> priorities that will pop up in any
-                          particular month.
-                        </li>
-                        <li>
-                          <span>04</span> We all intend to plan ahead.
-                        </li>
-                        <li>
-                          <span>05</span> The main component of a healthy env
-                          for self esteem.
-                        </li>
-                      </ul>
+                    
+                     
 
                     
                      
