@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../../components/Navbar/navbar";
 import Services from "../../components/Services/services";
+import Services3 from "../../components/Services3/services3";
 import Clients from "../../components/Clients/clients";
 import CallToAction from "../../components/Call-to-action/call-to-action";
 import Footer from "../../components/Footer/footer";
@@ -32,7 +33,8 @@ const About = () => {
       <Navbar nr={navbarRef} lr={logoRef} from="about-dark" />
       <PagesHeader />
       <Services style="4item" />
-   
+      <Services3 style="4item" />
+
       {/* <Clients theme="dark" /> */}
       {/* <CallToAction /> */}
       <Footer />

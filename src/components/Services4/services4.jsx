@@ -31,7 +31,7 @@ const Services4 = ({serviceMB50}) => {
               >
                 <span className={`icon color-font ${item.icon}`}></span>
                 <h6>{item.title}</h6>
-                <p>{item.content}</p>
+                {/* <p>{item.content}</p> */}
               </div>
             </div>
           ))}

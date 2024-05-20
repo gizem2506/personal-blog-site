@@ -41,7 +41,7 @@ const Services = ({ style, lines }) => {
                   
                     <div className="cont">
                     
-                    <div>
+                    <div className="col-lg-3 col-md-6 items">
                       <span className={`icon ${feature.icon}`}></span>
                     </div>
                       <h6>React Native</h6>

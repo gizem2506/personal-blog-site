@@ -12,7 +12,7 @@ const PagesHeader = ({blackStar}) => {
           <div className="col-lg-10">
             <div className="cont mt-100 mb-50 text-center">
               <h1 className="color-font fw-700">
-              Who We Are ?
+              Who We Am ?
               </h1>
               <div className="text">
               <Split>

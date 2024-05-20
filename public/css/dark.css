@@ -4575,7 +4575,7 @@ span:hover {
 }
 
 .services.lficon .item-box {
-  text-align: left;
+  /* text-align: left; */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6903,6 +6903,7 @@ span:hover {
 
 .clients-brand .item a:hover {
   opacity: 1;
+  
 }
 
 /* ====================== [ End Testimonials ] ====================== */
