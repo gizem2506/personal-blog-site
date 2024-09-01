@@ -45,18 +45,18 @@ const Navbar = ({ lr, nr, theme }) => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ml-auto">
           <li className="nav-item">
-              <Link href={`/homepage/home7-dark`}>
-                <a className="nav-link">Home</a>
+              <Link href={`/home`}>
+                <a className="nav-link">Anasayfa</a>
               </Link>
             </li>
         
             <li className="nav-item">
-              <Link href={`/about/about-dark`}>
-                <a className="nav-link">About</a>
+              <Link href={`/about`}>
+                <a className="nav-link">Hakkımda</a>
               </Link>
             </li>
             <li className="nav-item">
-              <Link href={`/works2/works2-dark`}>
+              <Link href={`/projects`}>
                 <a className="nav-link">Projeler</a>
               </Link>
             </li>
@@ -92,7 +92,7 @@ const Navbar = ({ lr, nr, theme }) => {
               </div>
             </li> */}
             <li className="nav-item">
-              <Link href={`/blog-list/blog-list-dark`}>
+              <Link href={`/blogs`}>
                 <a className="nav-link">Blog</a>
               </Link>
             </li>
@@ -122,8 +122,8 @@ const Navbar = ({ lr, nr, theme }) => {
               </div>
             </li> */}
             <li className="nav-item">
-              <Link href={`/contact/contact-dark`}>
-                <a className="nav-link">Contact</a>
+              <Link href={`/contact`}>
+                <a className="nav-link">İletişim</a>
               </Link>
             </li>
           </ul>

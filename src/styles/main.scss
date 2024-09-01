@@ -104,3 +104,12 @@ body.hideX .pace {
 .app-footer .social a {
   margin-right: 4px;
 }
+
+
+pre {
+  margin: 0; /* Pre etiketinin dış boşluklarını sıfırla */
+}
+
+code {
+  display: block; /* Code etiketini blok seviyesine getir */
+}

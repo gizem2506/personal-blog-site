@@ -6,7 +6,6 @@ const WorksStyle4 = () => {
   const [repos, setRepos] = useState([]);
 
   useEffect(() => {
-    // Fetch GitHub repos data
     const fetchRepos = async () => {
       try {
         const response = await fetch("https://api.github.com/users/gizem2506/repos");
@@ -32,10 +31,10 @@ const WorksStyle4 = () => {
           <div className="col-lg-8 col-md-10">
             <div className="sec-head text-center">
               <h6 className="wow fadeIn" data-wow-delay=".5s">
-                Portfolio
+              Portfolyo
               </h6>
               <h3 className="wow color-font">
-                Our Recent Web Design & <br /> Some Past Projects.
+               Geçmiş Projelerim.
               </h3>
             </div>
           </div>

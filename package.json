@@ -1,5 +1,5 @@
 {
-  "name": "vie-react",
+  "name": "Gizem Altay",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,6 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.13.0",
+    "@emotion/styled": "^11.13.0",
+    "@mui/icons-material": "^5.16.7",
+    "@mui/material": "^5.16.7",
     "axios": "^1.6.8",
     "formik": "^2.2.9",
     "next": "^12.0.4",
@@ -19,6 +23,7 @@
     "react-modal-video": "^1.2.8",
     "react-scroll": "^1.8.4",
     "react-slick": "^0.28.1",
+    "react-syntax-highlighter": "^15.5.0",
     "react-tsparticles": "^1.37.4",
     "react-visibility-sensor": "^5.1.1",
     "slick-carousel": "^1.8.1",

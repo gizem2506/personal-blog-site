@@ -9,7 +9,7 @@ const Footer = ({ hideBGCOLOR }) => {
              
               <div className="copy-right text-center">
                 <p>
-                  © 2024, Gizem Altay AllRight Reserved.
+                  © 2024, Gizem Altay Tüm Hakları Saklıdır.
                 </p>
               </div>
     </footer>

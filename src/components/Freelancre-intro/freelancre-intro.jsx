@@ -1,43 +1,89 @@
-/* eslint-disable @next/next/no-img-element */
-import React from "react";
-import Typewriter from "typewriter-effect";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 const FreelancreIntro = () => {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [repoCount, setRepoCount] = useState(0);
+  const [experience, setExperience] = useState({ years: 1, months: 5 });
+
+  const codeExample = `
+import React from 'react';
+
+function App() {
+  return (
+    <div>
+      <p>Yazılım Geliştirici</p>
+    </div>
+  );
+}
+
+export default App;
+  `;
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://localhost:8080/api/homepage");
+        setData(response.data[0]);
+
+        const repoResponse = await axios.get(
+          "https://api.github.com/users/gizem2506/repos"
+        );
+        setRepoCount(repoResponse.data.length);
+      } catch (error) {
+        console.error("Veri çekme hatası:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    const calculateExperience = () => {
+      const startDate = new Date("2023-01-12");
+      const currentDate = new Date();
+      let years = currentDate.getFullYear() - startDate.getFullYear();
+      let months = currentDate.getMonth() - startDate.getMonth();
+
+      if (months < 0) {
+        years--;
+        months += 12;
+      }
+
+      setExperience({ years, months });
+    };
+
+    calculateExperience();
+    const intervalId = setInterval(
+      calculateExperience,
+      1000 * 60 * 60 * 24 * 30
+    );
+
+    return () => clearInterval(intervalId);
+  }, []);
+
+  if (loading) return <div>Yükleniyor...</div>;
+  if (!data) return <div>Veri bulunamadı.</div>;
+
   return (
     <header className="freelancre valign">
       <div className="container">
         <div className="row">
           <div className="col-lg-4">
             <div className="img">
-              <img src="/img/hero.jpeg" alt="" />
+              <img src={data.img} alt="Homepage" />
             </div>
           </div>
-          <div className="col-lg-8 valign">
+          <div className="col-lg-4 valign">
             <div className="cont">
-              <h1 className="cd-headline clip">
-                Hello, My name is Gizem.
-               
-                <span
-                  style={{ fontSize: "38px", lineHeight: "49px" }}
-                  className="cd-words-wrapper"
-                >
-                  <Typewriter
-                    options={{
-                      wrapperClassName: "color-font fw-600",
-                      strings: [
-                        " I'm Software Developer",
-                        " I love design",
-                      ],
-                      autoStart: true,
-                      loop: true,
-                    }}
-                    loop={true}
-                    onInit={(typewriter) => {
-                      typewriter;
-                    }}
-                  />
-                </span>
-              </h1>
+              <div className="">
+                <pre>
+                  <code className="color-font fw-500">{codeExample}</code>
+                </pre>
+              </div>
             </div>
           </div>
         </div>
@@ -47,33 +93,29 @@ const FreelancreIntro = () => {
             <ul className="flex">
               <li className="flex">
                 <div className="numb valign">
-                  <h3>2</h3>
+                  <h3>{experience.years} Yıl</h3>
                 </div>
                 <div className="text valign">
-                  <p>
-                    Years <br /> Of Experience
-                  </p>
+                  <p>Deneyim Süresi</p>
                 </div>
               </li>
 
               <li className="flex">
                 <div className="numb valign">
-                  <h3>20</h3>
+                  <h3>{repoCount}</h3>
                 </div>
                 <div className="text valign">
-                  <p>
-                    Projects Completed <br /> 
-                  </p>
+                  <p>Tamamlanan Projeler</p>
                 </div>
               </li>
 
               <li className="mail-us">
-                <a href="mailto:your@email.com?subject=Subject">
+                <a href={`mailto:${data.email}?subject=Konu`}>
                   <div className="flex">
                     <div className="text valign">
                       <div className="full-width">
-                        <p>Get In Touch</p>
-                        <h6>gizemaltayis@gmail.com</h6>
+                        <p>İletişime Geç</p>
+                        <h6>{data.email}</h6>
                       </div>
                     </div>
                     <div className="mail-icon">

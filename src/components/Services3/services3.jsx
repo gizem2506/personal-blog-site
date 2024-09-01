@@ -1,11 +1,33 @@
-import React from "react";
-import Link from "next/link";
+import React, { useEffect, useState } from "react";
 import cardMouseEffect from "../../common/cardMouseEffect";
-
+import axios from "axios";
 const Services3 = ({ style, lines }) => {
-  React.useEffect(() => {
-    cardMouseEffect(document.querySelectorAll(".feat .items"));
+  const [servicesData, setServicesData] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchServicesData = async () => {
+      try {
+        const response = await axios.get('http://localhost:8080/api/services-data');
+        console.log("dddd", response.data)
+        setServicesData(response.data);
+        setLoading(false);
+      } catch (error) {
+        console.error('Veri çekme hatası:', error);
+        setLoading(false);
+      }
+    };
+
+    fetchServicesData();
   }, []);
+
+  if (loading) return <div>Yükleniyor...</div>;
+  if (!servicesData) return <div>Veri bulunamadı.</div>;
+
+
+  // React.useEffect(() => {
+  //   cardMouseEffect(document.querySelectorAll(".feat .items"));
+  // }, []);
   return (
     <section
       className={`services   section-padding ${style === "4item" ? "lficon" : lines ? "" : "pt-0"
@@ -15,85 +37,31 @@ const Services3 = ({ style, lines }) => {
           <div className="col-lg-8 col-md-10">
             <div className="sec-head  text-center">
               <h6 className="wow fadeIn" data-wow-delay=".5s">
-                Best Features
+                EN İYİ HİZMETLER
               </h6>
               <h3 className="wow color-font">
-                Services Provided             </h3>
+                Verilen Hizmetler        </h3>
             </div>
           </div>
         </div>
-        {/* <div className="row">
-          <div className="col-lg-8 col-md-10">
-            <div className="sec-head">
-              <h6 className="wow fadeIn" data-wow-delay=".5s">
-                Best Services
-              </h6>
-              <h3 className="wow color-font">
-              I provide services on Mobile Application Web Development SPSS Analysis.
-              </h3>
-            </div>
-          </div>
-        </div> */}
+
         <div className="row">
-          <div className="col-lg-3 col-md-6 items md-mb30">
-            <div className="item wow fadeIn" data-wow-delay=".3s">
-              <span className="icon wow color-font">
-                <i className="ion-ios-monitor"></i>
-              </span>
-              <h5>Interface Design</h5>
+          {servicesData.map((item) => (
+            <div
+              key={item.id}
+              className="col-lg-3 col-md-6 items md-mb30"
+            >
 
-              {/* <Link href="/about/about-dark">
-                <a className="more-stroke">
-                  <span></span>
-                </a>
-              </Link> */}
-            </div>
-          </div>
-          <div className="col-lg-3 col-md-6 items active md-mb30">
-            <div className="item wow fadeIn" data-wow-delay=".3s">
-              <span className="icon wow color-font">
-                <i className="ion-ios-bolt-outline"></i>
-              </span>
-              <h5>Creative Always</h5>
+              <div className="item wow fadeIn" data-wow-delay=".3s">
+                <span className="icon wow color-font">
+                  <i className="ion-ios-monitor"></i>
+                </span>
+                <h5>{item.title}</h5>
 
-              {/* <Link href="/about/about-dark">
-                <a className="more-stroke">
-                  <span></span>
-                </a>
-              </Link> */}
-            </div>
-          </div>
-          <div className="col-lg-3 col-md-6 items sm-mb30">
-            <div className="item wow fadeIn" data-wow-delay=".3s">
-              <span className="icon wow color-font">
-                <i className="ion-cube"></i>
-              </span>
-              <h5>Real-time Editing</h5>
 
-              {/* <Link href="/about/about-dark">
-                <a className="more-stroke">
-                  <span></span>
-                </a>
-              </Link> */}
+              </div>
             </div>
-          </div>
-          <div className="col-lg-3 col-md-6 items">
-            <div className="item wow fadeIn" data-wow-delay=".3s">
-              <span className="icon wow color-font">
-                <i className="ion-ios-color-wand"></i>
-              </span>
-              <h5>Art Concept</h5>
-              {/* <p>
-                Implementation and rollout of new network infrastructure,
-                including consolidation.
-              </p> */}
-              {/* <Link href="/about/about-dark">
-                <a className="more-stroke">
-                  <span></span>
-                </a>
-              </Link> */}
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

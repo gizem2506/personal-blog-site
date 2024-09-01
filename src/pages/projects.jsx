@@ -1,13 +1,11 @@
 import React from "react";
-import DarkTheme from "../../layouts/Dark";
-import Navbar from "../../components/Navbar/navbar";
-import Footer from "../../components/Footer/footer";
-import WorksHeader from "../../components/Works-header/works-header";
-// import WorksStyle2 from "../../components/Works-style2/works-style2";
-import WorksStyle4 from "../../components/Works-style4/works-style4";
+import DarkTheme from "../layouts/Dark";
+import Navbar from "../components/Navbar/navbar";
+import Footer from "../components/Footer/footer";
+import WorksStyle4 from "../components/Works-style4/works-style4";
 
 
-import Clients from "../../components/Clients/clients";
+import Clients from "../components/Clients/clients";
 
 
 const WorksDark = () => {
@@ -49,10 +47,10 @@ const WorksDark = () => {
         </div>
       </div>
       <Navbar nr={navbarRef} lr={logoRef} />
-      {/* <WorksHeader sliderRef={fixedHeader} /> */}
       <div ref={MainContent} className="main-content">
+        
         <WorksStyle4 grid={3} filterPosition="center" />
-      <Clients theme="dark" />
+        <Clients theme="dark" />
 
         <Footer />
       </div>

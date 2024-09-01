@@ -1,12 +1,13 @@
 import React from "react";
-import blog2Data from "../../data/blog2.json";
-import DarkTheme from "../../layouts/Dark";
-import Navbar from "../../components/Navbar/navbar";
-import BlogListed from "../../components/Blog-list/blog-list";
-import PageHeader from "../../components/Page-header/page-header";
-import Footer from "../../components/Footer/footer";
+import blog2Data from "../data/blog2.json";
+import DarkTheme from "../layouts/Dark";
+import Navbar from "../components/Navbar/navbar";
+import BlogListed from "../components/Blog-list/blog-list";
+import PageHeader from "../components/Page-header/page-header";
+import Footer from "../components/Footer/footer";
 
 const BlogListDark = () => {
+  
       const navbarRef = React.useRef(null);
       const logoRef = React.useRef(null);
 
@@ -36,8 +37,8 @@ const BlogListDark = () => {
       </div>
       <Navbar nr={navbarRef} lr={logoRef} />
       <PageHeader
-        title="Blog Posts."
-        paragraph="All the most current news and events of our creative team."
+        title="Blog Yazılarım."
+        paragraph="Blog Yazılarım’a göz atarak, merak ettiğiniz konularda keyifli okumalar yapabilirsiniz. Yazılarımda hem eğlenecek hem de yeni şeyler öğreneceksiniz!"
       />
       <BlogListed blogs={blog2Data} />
       <Footer />

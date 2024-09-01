@@ -80,7 +80,7 @@ body {
 }
 
 img {
-  width: 100%;
+  width: 150%;
   height: auto;
 }
 
@@ -153,6 +153,7 @@ span:hover {
 }
 
 .color-font {
+  font-size: medium;
   background: -webkit-gradient(
     linear,
     left top,
@@ -1773,7 +1774,7 @@ span:hover {
 }
 
 .navbar .navbar-nav .nav-link {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
   color: #fff;
   padding: 15px 7px;
@@ -1904,7 +1905,7 @@ span:hover {
 }
 
 .navbar .logo {
-  width: 50px;
+  width: 100px;
 }
 
 .nav-scroll {
@@ -1948,7 +1949,7 @@ span:hover {
 }
 
 .topnav .logo {
-  width: 50px;
+  width: 100px;
 }
 
 .topnav .menu-icon {
@@ -4384,9 +4385,9 @@ span:hover {
 }
 
 .services .item-box {
-  padding: 80px 30px;
+  padding: 80px 40px;
   text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 2px solid gray;
 }
 
 .services .item-box .icon {
@@ -4424,7 +4425,7 @@ span:hover {
 .services .item-box h6 {
   line-height: 1.8;
   text-transform: capitalize;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .services .rone > div {
@@ -4579,9 +4580,9 @@ span:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 30px;
-  padding: 60px 40px;
   border-radius: 20px;
+  height: 300px;
+  margin-bottom: 20px;
 }
 
 .services.lficon .item-box.no-curve {
@@ -8226,7 +8227,7 @@ footer .item .copy-right p a {
   }
 
   .container {
-    max-width: 720px;
+    max-width: 900px;
   }
 
   .navbar {
@@ -8252,7 +8253,7 @@ footer .item .copy-right p a {
 
   .navbar .logo {
     margin-left: 15px;
-    width: 50px;
+    width: 100px;
   }
 
   .nav-scroll .navbar-collapse .nav-link,
@@ -8636,7 +8637,7 @@ footer .item .copy-right p a {
   }
 
   .navbar .logo {
-    width: 40px;
+    width: 100px;
   }
 
   .hamenu .menu-links .main-menu > li {

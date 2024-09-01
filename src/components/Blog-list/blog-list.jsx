@@ -1,17 +1,41 @@
 /* eslint-disable react/jsx-key */
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import axios from "axios";
 
-const BlogList = ({ blogs }) => {
+const BlogList = () => {
+  const [blogs, setBlogs] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const blogsPerPage = 4;
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:8080/api/blog');
+        setBlogs(response.data);
+      } catch (error) {
+        console.error('Veri çekme hatası:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const indexOfLastBlog = currentPage * blogsPerPage;
+  const indexOfFirstBlog = indexOfLastBlog - blogsPerPage;
+  const currentBlogs = blogs.slice(indexOfFirstBlog, indexOfLastBlog);
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const totalPages = Math.ceil(blogs.length / blogsPerPage);
+
   return (
     <section className="blog-pg blog-list section-padding pt-0">
       <div className="container">
-        
         <div className="row justify-content-center">
           <div className="col-lg-11">
             <div className="posts mt-80">
-              {blogs.map((blogItem, index) => (
+              {currentBlogs.map((blogItem, index) => (
                 <div
                   className="item mb-80 wow fadeInUp"
                   key={blogItem.id}
@@ -20,34 +44,26 @@ const BlogList = ({ blogs }) => {
                   <div className="row">
                     <div className="col-lg-6 valign">
                       <div className="img md-mb50">
-                        <img src={blogItem.image} alt="" />
+                        <img src={blogItem.img} alt="" />
                       </div>
                     </div>
                     <div className="col-lg-6 valign">
                       <div className="cont">
                         <div>
                           <div className="info">
-                            <Link href="/blog/blog-dark">
-                              <a className="date">
-                                <span>
-                                  <i>{blogItem.date.day}</i>
-                                  {blogItem.date.month}
-                                </span>
-                              </a>
-                            </Link>
-                            
+                            {/* Date can be displayed here if needed */}
                           </div>
                           <h5>
-                            <Link href="/blog-details/blog-details-dark">
+                            <Link href={blogItem.url}>
                               <a>{blogItem.title}</a>
                             </Link>
                           </h5>
                           <p className="mt-10">
-                            {blogItem.content.substr(0, 146) + '...'}
+                            {blogItem.subtitle}
                           </p>
                           <div className="btn-more mt-30">
-                            <Link href="/blog-details/blog-details-dark">
-                              <a className="simple-btn">Read More</a>
+                            <Link href={blogItem.url}>
+                              <a target="_blank" className="simple-btn">Devamını Oku</a>
                             </Link>
                           </div>
                         </div>
@@ -57,19 +73,20 @@ const BlogList = ({ blogs }) => {
                 </div>
               ))}
               <div className="pagination">
-                <span className="active">
-                  <Link href={`/blog/blog-dark`}>1</Link>
-                </span>
-                <span>
-                  <Link href={`/blog/blog-dark`}>2</Link>
-                </span>
-                <span>
-                  <Link href={`/blog/blog-dark`}>
-                    <a>
+                {[...Array(totalPages)].map((_, pageIndex) => (
+                  <span key={pageIndex} className={currentPage === pageIndex + 1 ? "active" : ""}>
+                    <a onClick={() => paginate(pageIndex + 1)} style={{ cursor: "pointer" }}>
+                      {pageIndex + 1}
+                    </a>
+                  </span>
+                ))}
+                {currentPage < totalPages && (
+                  <span>
+                    <a onClick={() => paginate(currentPage + 1)} style={{ cursor: "pointer" }}>
                       <i className="fas fa-angle-right"></i>
                     </a>
-                  </Link>
-                </span>
+                  </span>
+                )}
               </div>
             </div>
           </div>

@@ -1,12 +1,12 @@
 import React from "react";
-import Navbar from "../../components/Navbar/navbar";
-import Services from "../../components/Services/services";
-import Services3 from "../../components/Services3/services3";
-import Clients from "../../components/Clients/clients";
-import CallToAction from "../../components/Call-to-action/call-to-action";
-import Footer from "../../components/Footer/footer";
-import PagesHeader from "../../components/Pages-header";
-import DarkTheme from "../../layouts/Dark";
+import Navbar from "../components/Navbar/navbar";
+import Services from "../components/Services/services";
+import Services3 from "../components/Services3/services3";
+import Clients from "../components/Clients/clients";
+import CallToAction from "../components/Call-to-action/call-to-action";
+import Footer from "../components/Footer/footer";
+import PagesHeader from "../components/Pages-header";
+import DarkTheme from "../layouts/Dark";
 
 const About = () => {
   const navbarRef = React.useRef(null);
@@ -35,8 +35,7 @@ const About = () => {
       <Services style="4item" />
       <Services3 style="4item" />
 
-      {/* <Clients theme="dark" /> */}
-      {/* <CallToAction /> */}
+   
       <Footer />
     </DarkTheme>
   );
